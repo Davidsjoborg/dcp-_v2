@@ -17,7 +17,7 @@ def Win():
 
 def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount 
-    GAME_ZIP64.run_motor(100)
+    GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     Y_C -= 1
     StepCount += 1

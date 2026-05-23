@@ -28,7 +28,7 @@ function Win() {
 
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEvents.Click, function UpButtonClick() {
     
-    GAME_ZIP64.runMotor(100)
+    GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     Y_C -= 1
     StepCount += 1
