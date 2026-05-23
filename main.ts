@@ -37,8 +37,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         Win()
     } else {
         // Makes you go to the other side
-        if (X_C > 8) {
-            X_C = 0
+        if (X_C < 0) {
+            X_C = 8
         }
         
         // led.plot(X_C, Y_C)
