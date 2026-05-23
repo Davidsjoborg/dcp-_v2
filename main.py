@@ -1,6 +1,53 @@
+def targetStopp():
+    global X_C,Y_C, StepCount,X_TC,Y_TC
+    if X_TC > 8:
+        X_TC = 8
+    if Y_TC > 8:
+        Y_TC = 8
+    if X_TC < 0:
+        X_TC = 0
+    if Y_TC < 0:
+        Y_TC = 0
+def Win():
+    #IF target over laps with player
+    display.clear()
+    display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.PURPLE))
+    display.show()
+    basic.show_number(StepCount)
+
 def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount 
     GAME_ZIP64.run_motor(100)
+    #led.unplot(X_C, Y_C)
+    X_C -= 1
+    StepCount += 1
+
+    #IF target over laps with player
+    if X_C == X_TC and Y_C == Y_TC:
+        Win()
+    else:
+        #Makes you go to the other side
+        if X_C > 8:
+            X_C = 0
+        
+        #led.plot(X_C, Y_C)
+        #led.unplot(X_TC, Y_TC)
+        
+        X_TC = X_TC + randint(-1, 1)
+        Y_TC = Y_TC + randint(-1, 1)
+        
+        targetStopp()
+
+        display.clear()
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        display.show()
+
+        #led.plot(X_TC, Y_TC)
+        #IF target over laps with player
+        if X_C == X_TC and Y_C == Y_TC:
+            Win()
+
 
 def DownButtonClick():
     GAME_ZIP64.run_motor(100)
