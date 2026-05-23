@@ -1,3 +1,4 @@
+// Version 1 OK
 function targetStopp() {
     
     if (X_TC > 7) {
