@@ -1,23 +1,15 @@
 def UpButtonClick():
     GAME_ZIP64.run_motor(100)
-    GAME_ZIP64.set_buzzer_pin()
-    music.play(music.tone_playable(262, music.beat(BeatFraction.SIXTEENTH)),
-        music.PlaybackMode.IN_BACKGROUND)
+
 def DownButtonClick():
     GAME_ZIP64.run_motor(100)
-    GAME_ZIP64.set_buzzer_pin()
-    music.play(music.tone_playable(131, music.beat(BeatFraction.SIXTEENTH)),
-        music.PlaybackMode.IN_BACKGROUND)
+
 def LeftButtonClick():
     GAME_ZIP64.run_motor(100)
-    GAME_ZIP64.set_buzzer_pin()
-    music.play(music.tone_playable(131, music.beat(BeatFraction.EIGHTH)),
-        music.PlaybackMode.IN_BACKGROUND)
+
 def RightButtonClick():
     GAME_ZIP64.run_motor(100)
-    GAME_ZIP64.set_buzzer_pin()
-    music.play(music.tone_playable(131, music.beat(BeatFraction.EIGHTH)),
-        music.PlaybackMode.IN_BACKGROUND)
+
 GAME_ZIP64.on_button_press(GAME_ZIP64.ZIP64ButtonPins.UP,
     GAME_ZIP64.ZIP64ButtonEvents.CLICK,
     UpButtonClick)
