@@ -1,11 +1,11 @@
 function targetStopp() {
     
-    if (X_TC > 8) {
-        X_TC = 8
+    if (X_TC > 7) {
+        X_TC = 7
     }
     
-    if (Y_TC > 8) {
-        Y_TC = 8
+    if (Y_TC > 7) {
+        Y_TC = 7
     }
     
     if (X_TC < 0) {
@@ -79,10 +79,10 @@ let X_TC = randint(0, 7)
 let Y_TC = randint(0, 7)
 // Changes cordinates if there the same on start
 if (X_C == X_TC && Y_C == Y_TC) {
-    Y_C = randint(0, 8)
-    X_C = randint(0, 8)
-    Y_TC = randint(0, 8)
-    X_TC = randint(0, 8)
+    Y_C = randint(0, 7)
+    X_C = randint(0, 7)
+    Y_TC = randint(0, 7)
+    X_TC = randint(0, 7)
 }
 
 // display: GAME_ZIP64.ZIP64Display = None
