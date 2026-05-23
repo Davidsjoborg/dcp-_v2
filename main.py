@@ -28,7 +28,7 @@ def UpButtonClick():
     else:
         #Makes you go to the other side
         if Y_C < 0:
-            Y_C = 8
+            Y_C = 7
         
         #led.plot(X_C, Y_C)
         #led.unplot(X_TC, Y_TC)
@@ -79,10 +79,10 @@ display.clear()
 # Setup the start Screen
 
 StepCount = 0
-X_C = 0
-Y_C = 0
-X_TC = randint(0, 8)
-Y_TC = randint(0, 8)
+X_C = randint(0, 7)
+Y_C = randint(0, 7)
+X_TC = randint(0, 7)
+Y_TC = randint(0, 7)
 
 #Changes cordinates if there the same on start
 if X_C == X_TC and Y_C == Y_TC:

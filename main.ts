@@ -38,7 +38,7 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
     } else {
         // Makes you go to the other side
         if (Y_C < 0) {
-            Y_C = 8
+            Y_C = 7
         }
         
         // led.plot(X_C, Y_C)
@@ -73,10 +73,10 @@ display.setBrightness(10)
 display.clear()
 //  Setup the start Screen
 let StepCount = 0
-let X_C = 0
-let Y_C = 0
-let X_TC = randint(0, 8)
-let Y_TC = randint(0, 8)
+let X_C = randint(0, 7)
+let Y_C = randint(0, 7)
+let X_TC = randint(0, 7)
+let Y_TC = randint(0, 7)
 // Changes cordinates if there the same on start
 if (X_C == X_TC && Y_C == Y_TC) {
     Y_C = randint(0, 8)
