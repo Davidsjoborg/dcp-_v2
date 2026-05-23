@@ -19,7 +19,7 @@ def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount 
     GAME_ZIP64.run_motor(100)
     #led.unplot(X_C, Y_C)
-    X_C -= 1
+    Y_C -= 1
     StepCount += 1
 
     #IF target over laps with player
@@ -27,8 +27,8 @@ def UpButtonClick():
         Win()
     else:
         #Makes you go to the other side
-        if X_C < 0:
-            X_C = 8
+        if Y_C < 0:
+            Y_C = 8
         
         #led.plot(X_C, Y_C)
         #led.unplot(X_TC, Y_TC)
