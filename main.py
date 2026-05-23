@@ -27,7 +27,7 @@ GAME_ZIP64.on_button_press(GAME_ZIP64.ZIP64ButtonPins.RIGHT,
 display = GAME_ZIP64.create_zip64_display()
 display.set_brightness(10)
 display.clear()
-display.show_color(GAME_ZIP64.colors(ZipLedColors.RED))
+#display.show_color(GAME_ZIP64.colors(ZipLedColors.RED))
 display.set_pixel_color_at(0, GAME_ZIP64.colors(ZipLedColors.BLUE))
 display.set_matrix_color(2, 2, GAME_ZIP64.colors(ZipLedColors.GREEN))
 display.show()
