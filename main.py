@@ -105,5 +105,5 @@ display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
 #display.set_pixel_color_at(0, GAME_ZIP64.colors(ZipLedColors.BLUE))
 #display.set_matrix_color(2, 2, GAME_ZIP64.colors(ZipLedColors.GREEN))
 display.show()
-GAME_ZIP64.run_motor(100)
+#GAME_ZIP64.run_motor(100)
 
