@@ -21,7 +21,7 @@ function targetStopp() {
 function Win() {
     // IF target over laps with player
     display.clear()
-    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Purple))
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Yellow))
     display.show()
     basic.showNumber(StepCount)
 }

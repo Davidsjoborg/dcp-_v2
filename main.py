@@ -11,7 +11,7 @@ def targetStopp():
 def Win():
     #IF target over laps with player
     display.clear()
-    display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.PURPLE))
+    display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
     display.show()
     basic.show_number(StepCount)
 
