@@ -20,8 +20,6 @@ function targetStopp() {
 }
 
 function Win() {
-    let X_C: number;
-    let Y_C: number;
     
     // IF target over laps with player
     display.clear()
@@ -33,8 +31,8 @@ function Win() {
     display.clear()
     X_C = randint(0, 7)
     Y_C = randint(0, 7)
-    let X_TC = randint(0, 7)
-    let Y_TC = randint(0, 7)
+    X_TC = randint(0, 7)
+    Y_TC = randint(0, 7)
     display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
     display.show()

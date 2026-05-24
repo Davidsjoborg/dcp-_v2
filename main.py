@@ -10,7 +10,7 @@ def targetStopp():
     if Y_TC < 0:
         Y_TC = 0
 def Win():
-    global Rand_top,Rand_bottom
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
     #IF target over laps with player
     display.clear()
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
