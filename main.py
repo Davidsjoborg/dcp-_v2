@@ -15,9 +15,10 @@ def Win():
     display.clear()
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
     display.show()
-    basic.show_number(StepCount)
+    #basic.show_number(StepCount)
+    basic.show_string("W")
     basic.pause(2000)
-    
+
     display.clear()
     display.set_matrix_color(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.GREEN))
     display.set_matrix_color(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.RED))
@@ -30,7 +31,6 @@ def Win():
 def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
     GAME_ZIP64.run_motor(50)
-    #led.unplot(X_C, Y_C)
     Y_C -= 1
     StepCount += 1
 
@@ -60,11 +60,9 @@ def UpButtonClick():
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
         display.show()
 
-        #led.plot(X_TC, Y_TC)
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()
-
 
 def DownButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom

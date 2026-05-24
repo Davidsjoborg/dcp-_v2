@@ -25,7 +25,8 @@ function Win() {
     display.clear()
     display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Yellow))
     display.show()
-    basic.showNumber(StepCount)
+    // basic.show_number(StepCount)
+    basic.showString("W")
     basic.pause(2000)
     display.clear()
     display.setMatrixColor(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.Green))
@@ -38,7 +39,6 @@ function Win() {
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEvents.Click, function UpButtonClick() {
     
     GAME_ZIP64.runMotor(50)
-    // led.unplot(X_C, Y_C)
     Y_C -= 1
     StepCount += 1
     // IF target over laps with player
@@ -65,7 +65,6 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.show()
-        // led.plot(X_TC, Y_TC)
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
