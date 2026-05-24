@@ -1,4 +1,4 @@
-#Version 1 OK
+#Version 3 OK
 def targetStopp():
     global X_C,Y_C, StepCount,X_TC,Y_TC
     if X_TC > 7:
