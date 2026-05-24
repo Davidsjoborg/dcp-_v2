@@ -17,7 +17,7 @@ def Win():
     basic.show_number(StepCount)
 
 def UpButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount 
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     Y_C -= 1
@@ -30,12 +30,17 @@ def UpButtonClick():
         #Makes you go to the other side
         if Y_C < 0:
             Y_C = 7
+
+        RandInt_X = randint(-1, 1)
+        RandInt_Y = randint(-1, 1)
+
+        #Makes movement number randome again
+        if RandInt_X == 0 and RandInt_Y == 0:
+            RandInt_X = randint(-1, 1)
+            RandInt_Y = randint(-1, 1)
         
-        #led.plot(X_C, Y_C)
-        #led.unplot(X_TC, Y_TC)
-        
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         
         targetStopp()
 
@@ -51,7 +56,7 @@ def UpButtonClick():
 
 
 def DownButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     Y_C += 1
@@ -65,11 +70,16 @@ def DownButtonClick():
         if Y_C > 7:
             Y_C = 0
         
-        #led.plot(X_C, Y_C)
-        #led.unplot(X_TC, Y_TC)
+        RandInt_X = randint(-1, 1)
+        RandInt_Y = randint(-1, 1)
+
+        #Makes movement number randome again
+        if RandInt_X == 0 and RandInt_Y == 0:
+            RandInt_X = randint(-1, 1)
+            RandInt_Y = randint(-1, 1)
         
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         
         targetStopp()
 
@@ -84,7 +94,7 @@ def DownButtonClick():
             Win()
 
 def LeftButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     X_C -= 1
@@ -98,11 +108,16 @@ def LeftButtonClick():
         if X_C < 0:
             X_C = 7
         
-        #led.plot(X_C, Y_C)
-        #led.unplot(X_TC, Y_TC)
+        RandInt_X = randint(-1, 1)
+        RandInt_Y = randint(-1, 1)
+
+        #Makes movement number randome again
+        if RandInt_X == 0 and RandInt_Y == 0:
+            RandInt_X = randint(-1, 1)
+            RandInt_Y = randint(-1, 1)
         
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         
         targetStopp()
 
@@ -117,7 +132,7 @@ def LeftButtonClick():
             Win()
 
 def RightButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     X_C += 1
@@ -131,11 +146,17 @@ def RightButtonClick():
         if X_C > 7:
             X_C = 0
         
-        #led.plot(X_C, Y_C)
-        #led.unplot(X_TC, Y_TC)
         
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        RandInt_X = randint(-1, 1)
+        RandInt_Y = randint(-1, 1)
+
+        #Makes movement number randome again
+        if RandInt_X == 0 and RandInt_Y == 0:
+            RandInt_X = randint(-1, 1)
+            RandInt_Y = randint(-1, 1)
+        
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         
         targetStopp()
 
@@ -174,6 +195,9 @@ X_C = randint(0, 7)
 Y_C = randint(0, 7)
 X_TC = randint(0, 7)
 Y_TC = randint(0, 7)
+RandInt_X = 0
+RandInt_Y = 0
+
 
 #Changes cordinates if there the same on start
 if X_C == X_TC and Y_C == Y_TC:
