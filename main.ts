@@ -38,6 +38,8 @@ function Win() {
 
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEvents.Click, function UpButtonClick() {
     
+    basic.showString("U")
+    basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     Y_C -= 1
     StepCount += 1
@@ -75,6 +77,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
 })
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64ButtonEvents.Click, function DownButtonClick() {
     
+    basic.showString("D")
+    basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     Y_C += 1
@@ -114,6 +118,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
 })
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64ButtonEvents.Click, function LeftButtonClick() {
     
+    basic.showString("L")
+    basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     X_C -= 1
@@ -153,6 +159,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
 })
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64ButtonEvents.Click, function RightButtonClick() {
     
+    basic.showString("R")
+    basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     X_C += 1
