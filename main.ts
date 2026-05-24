@@ -26,6 +26,11 @@ function Win() {
     display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Yellow))
     display.show()
     basic.showNumber(StepCount)
+    basic.pause(2000)
+    display.clear()
+    display.setMatrixColor(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.Green))
+    display.setMatrixColor(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.Red))
+    display.show()
     Rand_top += 1
     Rand_bottom -= 1
 }

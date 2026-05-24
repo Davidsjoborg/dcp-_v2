@@ -16,8 +16,16 @@ def Win():
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
     display.show()
     basic.show_number(StepCount)
+    basic.pause(2000)
+    
+    display.clear()
+    display.set_matrix_color(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.GREEN))
+    display.set_matrix_color(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.RED))
+    display.show()
+    
     Rand_top += 1
     Rand_bottom -= 1
+
 
 def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
