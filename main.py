@@ -10,14 +10,17 @@ def targetStopp():
     if Y_TC < 0:
         Y_TC = 0
 def Win():
+    global Rand_top,Rand_bottom
     #IF target over laps with player
     display.clear()
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
     display.show()
     basic.show_number(StepCount)
+    Rand_top += 1
+    Rand_bottom -= 1
 
 def UpButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     Y_C -= 1
@@ -31,13 +34,13 @@ def UpButtonClick():
         if Y_C < 0:
             Y_C = 7
 
-        RandInt_X = randint(-1, 1)
-        RandInt_Y = randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
 
         #Makes movement number randome again
         if RandInt_X == 0 and RandInt_Y == 0:
-            RandInt_X = randint(-1, 1)
-            RandInt_Y = randint(-1, 1)
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
@@ -56,7 +59,7 @@ def UpButtonClick():
 
 
 def DownButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     Y_C += 1
@@ -70,13 +73,13 @@ def DownButtonClick():
         if Y_C > 7:
             Y_C = 0
         
-        RandInt_X = randint(-1, 1)
-        RandInt_Y = randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
 
         #Makes movement number randome again
         if RandInt_X == 0 and RandInt_Y == 0:
-            RandInt_X = randint(-1, 1)
-            RandInt_Y = randint(-1, 1)
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
@@ -94,7 +97,7 @@ def DownButtonClick():
             Win()
 
 def LeftButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     X_C -= 1
@@ -108,13 +111,13 @@ def LeftButtonClick():
         if X_C < 0:
             X_C = 7
         
-        RandInt_X = randint(-1, 1)
-        RandInt_Y = randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
 
         #Makes movement number randome again
         if RandInt_X == 0 and RandInt_Y == 0:
-            RandInt_X = randint(-1, 1)
-            RandInt_Y = randint(-1, 1)
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
@@ -132,7 +135,7 @@ def LeftButtonClick():
             Win()
 
 def RightButtonClick():
-    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y
+    global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     X_C += 1
@@ -147,13 +150,13 @@ def RightButtonClick():
             X_C = 0
         
         
-        RandInt_X = randint(-1, 1)
-        RandInt_Y = randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
 
         #Makes movement number randome again
         if RandInt_X == 0 and RandInt_Y == 0:
-            RandInt_X = randint(-1, 1)
-            RandInt_Y = randint(-1, 1)
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
@@ -197,6 +200,8 @@ X_TC = randint(0, 7)
 Y_TC = randint(0, 7)
 RandInt_X = 0
 RandInt_Y = 0
+Rand_top = 1
+Rand_bottom = -1
 
 
 #Changes cordinates if there the same on start
