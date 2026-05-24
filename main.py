@@ -15,8 +15,8 @@ def Win():
     display.clear()
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
     display.show()
-    #basic.show_number(StepCount)
-    basic.show_string("W")
+    basic.show_number(StepCount)
+    #basic.show_string("W")
     basic.pause(2000)
 
     display.clear()
@@ -35,8 +35,8 @@ def Win():
 
 def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    basic.show_string("U")
-    basic.pause(2000)
+    #basic.show_string("U")
+    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     Y_C -= 1
     StepCount += 1
@@ -73,8 +73,8 @@ def UpButtonClick():
 
 def DownButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    basic.show_string("D")
-    basic.pause(2000)
+    #basic.show_string("D")
+    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     Y_C += 1
@@ -113,8 +113,8 @@ def DownButtonClick():
 
 def LeftButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    basic.show_string("L")
-    basic.pause(2000)
+    #basic.show_string("L")
+    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     X_C -= 1
@@ -153,8 +153,8 @@ def LeftButtonClick():
 
 def RightButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    basic.show_string("R")
-    basic.pause(2000)
+    #basic.show_string("R")
+    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
     X_C += 1
