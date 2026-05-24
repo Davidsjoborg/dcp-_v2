@@ -1,4 +1,4 @@
-// Version 1 OK
+// Version 3 OK
 function targetStopp() {
     
     if (X_TC > 7) {
@@ -20,17 +20,31 @@ function targetStopp() {
 }
 
 function Win() {
+    
     // IF target over laps with player
     display.clear()
     display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Yellow))
     display.show()
     basic.showNumber(StepCount)
+    // basic.show_string("W")
+    basic.pause(2000)
+    display.clear()
+    X_C = randint(0, 7)
+    Y_C = randint(0, 7)
+    X_TC = randint(0, 7)
+    Y_TC = randint(0, 7)
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+    display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+    display.show()
+    Rand_top += 1
+    Rand_bottom -= 1
 }
 
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEvents.Click, function UpButtonClick() {
     
+    // basic.show_string("U")
+    // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
-    // led.unplot(X_C, Y_C)
     Y_C -= 1
     StepCount += 1
     // IF target over laps with player
@@ -42,16 +56,21 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
             Y_C = 7
         }
         
-        // led.plot(X_C, Y_C)
-        // led.unplot(X_TC, Y_TC)
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+        // Makes movement number randome again
+        if (RandInt_X == 0 && RandInt_Y == 0) {
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+        }
+        
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.show()
-        // led.plot(X_TC, Y_TC)
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
@@ -62,6 +81,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
 })
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64ButtonEvents.Click, function DownButtonClick() {
     
+    // basic.show_string("D")
+    // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     Y_C += 1
@@ -75,10 +96,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
             Y_C = 0
         }
         
-        // led.plot(X_C, Y_C)
-        // led.unplot(X_TC, Y_TC)
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+        // Makes movement number randome again
+        if (RandInt_X == 0 && RandInt_Y == 0) {
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+        }
+        
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -95,6 +122,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
 })
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64ButtonEvents.Click, function LeftButtonClick() {
     
+    // basic.show_string("L")
+    // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     X_C -= 1
@@ -108,10 +137,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
             X_C = 7
         }
         
-        // led.plot(X_C, Y_C)
-        // led.unplot(X_TC, Y_TC)
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+        // Makes movement number randome again
+        if (RandInt_X == 0 && RandInt_Y == 0) {
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+        }
+        
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -128,6 +163,8 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
 })
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64ButtonEvents.Click, function RightButtonClick() {
     
+    // basic.show_string("R")
+    // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
     X_C += 1
@@ -141,10 +178,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
             X_C = 0
         }
         
-        // led.plot(X_C, Y_C)
-        // led.unplot(X_TC, Y_TC)
-        X_TC = X_TC + randint(-1, 1)
-        Y_TC = Y_TC + randint(-1, 1)
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+        // Makes movement number randome again
+        if (RandInt_X == 0 && RandInt_Y == 0) {
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+        }
+        
+        X_TC = X_TC + RandInt_X
+        Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -168,6 +211,10 @@ let X_C = randint(0, 7)
 let Y_C = randint(0, 7)
 let X_TC = randint(0, 7)
 let Y_TC = randint(0, 7)
+let RandInt_X = 0
+let RandInt_Y = 0
+let Rand_top = 1
+let Rand_bottom = -1
 // Changes cordinates if there the same on start
 if (X_C == X_TC && Y_C == Y_TC) {
     Y_C = randint(0, 7)
