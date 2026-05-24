@@ -20,8 +20,13 @@ def Win():
     basic.pause(2000)
 
     display.clear()
-    display.set_matrix_color(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.GREEN))
-    display.set_matrix_color(randint(0, 7), randint(0, 7), GAME_ZIP64.colors(ZipLedColors.RED))
+    X_C = randint(0, 7)    
+    Y_C = randint(0, 7)
+    X_TC = randint(0, 7)
+    Y_TC = randint(0, 7)
+
+    display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+    display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
     display.show()
     
     Rand_top += 1
