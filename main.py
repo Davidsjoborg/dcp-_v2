@@ -63,8 +63,9 @@ def UpButtonClick():
         targetStopp()
 
         display.clear()
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        basic.pause(50)
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
         #IF target over laps with player
@@ -102,8 +103,9 @@ def DownButtonClick():
         targetStopp()
 
         display.clear()
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        basic.pause(50)
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
         #led.plot(X_TC, Y_TC)
@@ -142,8 +144,9 @@ def LeftButtonClick():
         targetStopp()
 
         display.clear()
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        basic.pause(50)
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
         #led.plot(X_TC, Y_TC)
@@ -183,8 +186,9 @@ def RightButtonClick():
         targetStopp()
 
         display.clear()
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        basic.pause(50)
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
         #led.plot(X_TC, Y_TC)

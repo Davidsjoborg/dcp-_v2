@@ -68,8 +68,9 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        basic.pause(50)
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
@@ -108,8 +109,9 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        basic.pause(50)
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
         // led.plot(X_TC, Y_TC)
         // IF target over laps with player
@@ -149,8 +151,9 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        basic.pause(50)
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
         // led.plot(X_TC, Y_TC)
         // IF target over laps with player
@@ -190,8 +193,9 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         Y_TC = Y_TC + RandInt_Y
         targetStopp()
         display.clear()
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        basic.pause(50)
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
         // led.plot(X_TC, Y_TC)
         // IF target over laps with player
