@@ -64,7 +64,7 @@ def UpButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        basic.pause(250)
+        basic.pause(150)
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
@@ -104,7 +104,7 @@ def DownButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        basic.pause(250)
+        basic.pause(150)
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
@@ -145,7 +145,7 @@ def LeftButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        basic.pause(250)
+        basic.pause(150)
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
@@ -187,7 +187,7 @@ def RightButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        basic.pause(250)
+        basic.pause(150)
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
