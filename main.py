@@ -68,7 +68,7 @@ def UpButtonClick():
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()        
 
-        basic.pause(1000)
+        basic.pause(150)
 
         Y_C -= 1
         if Y_C < 0:
@@ -119,7 +119,7 @@ def DownButtonClick():
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
-        basic.pause(1000)
+        basic.pause(150)
 
         Y_C += 1
         if Y_C > 7:
@@ -169,7 +169,7 @@ def LeftButtonClick():
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
-        basic.pause(1000)
+        basic.pause(150)
 
         X_C -= 1
         if X_C < 0:
@@ -221,7 +221,7 @@ def RightButtonClick():
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
-        basic.pause(1000)
+        basic.pause(150)
 
         X_C += 1
         if X_C > 7:
