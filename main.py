@@ -68,6 +68,10 @@ def UpButtonClick():
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()        
 
+        #IF target over laps with player
+        if X_C == X_TC and Y_C == Y_TC:
+            Win()
+
         basic.pause(150)
 
         Y_C -= 1
@@ -119,6 +123,10 @@ def DownButtonClick():
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
+        #IF target over laps with player
+        if X_C == X_TC and Y_C == Y_TC:
+            Win()
+
         basic.pause(150)
 
         Y_C += 1
@@ -168,6 +176,10 @@ def LeftButtonClick():
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
+
+        #IF target over laps with player
+        if X_C == X_TC and Y_C == Y_TC:
+            Win()
 
         basic.pause(150)
 
@@ -220,6 +232,10 @@ def RightButtonClick():
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
+
+        #IF target over laps with player
+        if X_C == X_TC and Y_C == Y_TC:
+            Win()
 
         basic.pause(150)
 
