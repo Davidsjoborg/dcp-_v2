@@ -69,7 +69,7 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
-        basic.pause(150)
+        basic.pause(1000)
         Y_C -= 1
         if (Y_C < 0) {
             Y_C = 7
@@ -117,10 +117,10 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
-        basic.pause(150)
-        Y_C -= 1
-        if (Y_C < 0) {
-            Y_C = 7
+        basic.pause(1000)
+        Y_C += 1
+        if (Y_C > 7) {
+            Y_C = 0
         }
         
         display.clear()
@@ -165,10 +165,10 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
-        basic.pause(150)
-        Y_C -= 1
-        if (Y_C < 0) {
-            Y_C = 7
+        basic.pause(1000)
+        X_C -= 1
+        if (X_C < 0) {
+            X_C = 7
         }
         
         display.clear()
@@ -214,10 +214,10 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
-        basic.pause(150)
-        Y_C -= 1
-        if (Y_C < 0) {
-            Y_C = 7
+        basic.pause(1000)
+        X_C += 1
+        if (X_C > 7) {
+            X_C = 0
         }
         
         display.clear()
