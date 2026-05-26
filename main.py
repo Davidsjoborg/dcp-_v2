@@ -19,12 +19,13 @@ def Win():
     #basic.show_string("W")
     basic.pause(2000)
 
-    display.clear()
+
     X_C = randint(0, 7)    
     Y_C = randint(0, 7)
     X_TC = randint(0, 7)
     Y_TC = randint(0, 7)
 
+    display.clear()
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
     display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
     display.show()
@@ -38,7 +39,7 @@ def UpButtonClick():
     #basic.show_string("U")
     #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
-    Y_C -= 1
+    #Y_C -= 1
     StepCount += 1
 
     #IF target over laps with player
@@ -46,8 +47,8 @@ def UpButtonClick():
         Win()
     else:
         #Makes you go to the other side
-        if Y_C < 0:
-            Y_C = 7
+        #if Y_C < 0:
+        #    Y_C = 7
 
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
@@ -64,9 +65,20 @@ def UpButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+        display.show()        
+
         basic.pause(150)
+
+        Y_C -= 1
+        if Y_C < 0:
+            Y_C = 7
+        
+        display.clear()
+        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
+
 
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
@@ -78,7 +90,7 @@ def DownButtonClick():
     #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
-    Y_C += 1
+    #Y_C += 1
     StepCount += 1
 
     #IF target over laps with player
@@ -86,8 +98,8 @@ def DownButtonClick():
         Win()
     else:
         #Makes you go to the other side
-        if Y_C > 7:
-            Y_C = 0
+        #if Y_C > 7:
+        #    Y_C = 0
         
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
@@ -104,11 +116,20 @@ def DownButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        basic.pause(150)
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
-        #led.plot(X_TC, Y_TC)
+        basic.pause(150)
+
+        Y_C -= 1
+        if Y_C < 0:
+            Y_C = 7
+        
+        display.clear()
+        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+        display.show()
+
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()
@@ -119,7 +140,7 @@ def LeftButtonClick():
     #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
-    X_C -= 1
+    #X_C -= 1
     StepCount += 1
 
     #IF target over laps with player
@@ -127,8 +148,8 @@ def LeftButtonClick():
         Win()
     else:
         #Makes you go to the other side
-        if X_C < 0:
-            X_C = 7
+        #if X_C < 0:
+        #    X_C = 7
         
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
@@ -145,7 +166,17 @@ def LeftButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+        display.show()
+
         basic.pause(150)
+
+        Y_C -= 1
+        if Y_C < 0:
+            Y_C = 7
+        
+        display.clear()
+        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
@@ -160,7 +191,7 @@ def RightButtonClick():
     #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
     #led.unplot(X_C, Y_C)
-    X_C += 1
+    #X_C += 1
     StepCount += 1
 
     #IF target over laps with player
@@ -168,8 +199,8 @@ def RightButtonClick():
         Win()
     else:
         #Makes you go to the other side
-        if X_C > 7:
-            X_C = 0
+        #if X_C > 7:
+        #    X_C = 0
         
         
         RandInt_X = randint(Rand_bottom, Rand_top)
@@ -187,11 +218,20 @@ def RightButtonClick():
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        basic.pause(150)
         display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
         display.show()
 
-        #led.plot(X_TC, Y_TC)
+        basic.pause(150)
+
+        Y_C -= 1
+        if Y_C < 0:
+            Y_C = 7
+        
+        display.clear()
+        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+        display.show()
+
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()

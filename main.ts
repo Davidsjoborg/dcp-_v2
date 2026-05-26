@@ -28,11 +28,11 @@ function Win() {
     basic.showNumber(StepCount)
     // basic.show_string("W")
     basic.pause(2000)
-    display.clear()
     X_C = randint(0, 7)
     Y_C = randint(0, 7)
     X_TC = randint(0, 7)
     Y_TC = randint(0, 7)
+    display.clear()
     display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
     display.show()
@@ -45,17 +45,15 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
     // basic.show_string("U")
     // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
-    Y_C -= 1
+    // Y_C -= 1
     StepCount += 1
     // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
         // Makes you go to the other side
-        if (Y_C < 0) {
-            Y_C = 7
-        }
-        
+        // if Y_C < 0:
+        //     Y_C = 7
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
         // Makes movement number randome again
@@ -69,7 +67,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         targetStopp()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+        display.show()
         basic.pause(150)
+        Y_C -= 1
+        if (Y_C < 0) {
+            Y_C = 7
+        }
+        
+        display.clear()
+        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
         // IF target over laps with player
@@ -86,17 +93,15 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
     // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
-    Y_C += 1
+    // Y_C += 1
     StepCount += 1
     // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
         // Makes you go to the other side
-        if (Y_C > 7) {
-            Y_C = 0
-        }
-        
+        // if Y_C > 7:
+        //     Y_C = 0
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
         // Makes movement number randome again
@@ -110,10 +115,18 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         targetStopp()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-        basic.pause(150)
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
-        // led.plot(X_TC, Y_TC)
+        basic.pause(150)
+        Y_C -= 1
+        if (Y_C < 0) {
+            Y_C = 7
+        }
+        
+        display.clear()
+        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+        display.show()
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
@@ -128,17 +141,15 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
     // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
-    X_C -= 1
+    // X_C -= 1
     StepCount += 1
     // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
         // Makes you go to the other side
-        if (X_C < 0) {
-            X_C = 7
-        }
-        
+        // if X_C < 0:
+        //     X_C = 7
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
         // Makes movement number randome again
@@ -152,7 +163,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         targetStopp()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+        display.show()
         basic.pause(150)
+        Y_C -= 1
+        if (Y_C < 0) {
+            Y_C = 7
+        }
+        
+        display.clear()
+        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
         // led.plot(X_TC, Y_TC)
@@ -170,17 +190,15 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
     // basic.pause(2000)
     GAME_ZIP64.runMotor(50)
     // led.unplot(X_C, Y_C)
-    X_C += 1
+    // X_C += 1
     StepCount += 1
     // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
         // Makes you go to the other side
-        if (X_C > 7) {
-            X_C = 0
-        }
-        
+        // if X_C > 7:
+        //     X_C = 0
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
         // Makes movement number randome again
@@ -194,10 +212,18 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         targetStopp()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-        basic.pause(150)
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
         display.show()
-        // led.plot(X_TC, Y_TC)
+        basic.pause(150)
+        Y_C -= 1
+        if (Y_C < 0) {
+            Y_C = 7
+        }
+        
+        display.clear()
+        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+        display.show()
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
