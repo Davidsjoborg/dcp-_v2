@@ -38,6 +38,11 @@ function Win() {
     display.show()
     Rand_top += 1
     Rand_bottom -= 1
+    if (Rand_top > 3) {
+        Rand_top = 3
+        Rand_bottom = -3
+    }
+    
 }
 
 GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEvents.Click, function UpButtonClick() {
