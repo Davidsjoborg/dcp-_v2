@@ -34,7 +34,7 @@ def Win():
     Rand_bottom -= 1
 
     Level += 1
-    basic.pause(3000)
+    basic.pause(1500)
     basic.show_number(Level)
 
     if Rand_top > 3:

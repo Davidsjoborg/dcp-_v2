@@ -39,7 +39,7 @@ function Win() {
     Rand_top += 1
     Rand_bottom -= 1
     Level += 1
-    basic.pause(3000)
+    basic.pause(1500)
     basic.showNumber(Level)
     if (Rand_top > 3) {
         Rand_top = 3
