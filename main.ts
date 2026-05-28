@@ -1,7 +1,7 @@
 // Version 3 OK
 function targetStopp_v2() {
     
-    if (Level > 3) {
+    if (Level > 2) {
         if (X_TC > 7) {
             X_TC = 0
         }
@@ -67,9 +67,9 @@ function Win() {
     Level += 1
     // basic.pause(1500)
     basic.showNumber(Level)
-    if (Rand_top > 3) {
-        Rand_top = 3
-        Rand_bottom = -3
+    if (Rand_top > 2) {
+        Rand_top = 2
+        Rand_bottom = -2
     }
     
 }

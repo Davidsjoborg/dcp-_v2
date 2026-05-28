@@ -1,7 +1,7 @@
 #Version 3 OK
 def targetStopp_v2():
     global X_C,Y_C, StepCount,X_TC,Y_TC,Level
-    if Level > 3:
+    if Level > 2:
         if X_TC > 7:
             X_TC = 0
         if Y_TC > 7:
@@ -53,9 +53,9 @@ def Win():
     #basic.pause(1500)
     basic.show_number(Level)
 
-    if Rand_top > 3:
-        Rand_top = 3
-        Rand_bottom = -3
+    if Rand_top > 2:
+        Rand_top = 2
+        Rand_bottom = -2
 
 
 def UpButtonClick():
