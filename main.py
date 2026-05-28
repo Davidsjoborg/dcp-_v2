@@ -1,4 +1,19 @@
 #Version 3 OK
+def targetStopp_v2():
+    global X_C,Y_C, StepCount,X_TC,Y_TC,Level
+    if Level > 3:
+        if X_TC > 7:
+            X_TC = 0
+        if Y_TC > 7:
+            Y_TC = 0
+        if X_TC < 0:
+            X_TC = 7
+        if Y_TC < 0:
+            Y_TC = 7
+    else:
+        targetStopp()
+
+
 def targetStopp():
     global X_C,Y_C, StepCount,X_TC,Y_TC
     if X_TC > 7:
@@ -70,7 +85,7 @@ def UpButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
-        targetStopp()
+        targetStopp_v2()
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
@@ -125,7 +140,7 @@ def DownButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
-        targetStopp()
+        targetStopp_v2()
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
@@ -179,7 +194,7 @@ def LeftButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
-        targetStopp()
+        targetStopp_v2()
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
@@ -235,7 +250,7 @@ def RightButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
-        targetStopp()
+        targetStopp_v2()
 
         display.clear()
         display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))

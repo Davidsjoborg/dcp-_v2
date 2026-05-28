@@ -1,4 +1,29 @@
 // Version 3 OK
+function targetStopp_v2() {
+    
+    if (Level > 3) {
+        if (X_TC > 7) {
+            X_TC = 0
+        }
+        
+        if (Y_TC > 7) {
+            Y_TC = 0
+        }
+        
+        if (X_TC < 0) {
+            X_TC = 7
+        }
+        
+        if (Y_TC < 0) {
+            Y_TC = 7
+        }
+        
+    } else {
+        targetStopp()
+    }
+    
+}
+
 function targetStopp() {
     
     if (X_TC > 7) {
@@ -73,7 +98,7 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
-        targetStopp()
+        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -127,7 +152,7 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
-        targetStopp()
+        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -181,7 +206,7 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
-        targetStopp()
+        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -236,7 +261,7 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
-        targetStopp()
+        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
