@@ -1,4 +1,4 @@
-// Version 3 OK
+// Version 4 OK
 function targetStopp_v2() {
     
     if (Level > 2) {

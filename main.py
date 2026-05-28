@@ -1,4 +1,4 @@
-#Version 3 OK
+#Version 4 OK
 def targetStopp_v2():
     global X_C,Y_C, StepCount,X_TC,Y_TC,Level
     if Level > 2:
