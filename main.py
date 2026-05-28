@@ -26,7 +26,7 @@ def Win():
     Y_TC = randint(0, 7)
 
     display.clear()
-    display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+    #display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
     display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
     display.show()
     

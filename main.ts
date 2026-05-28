@@ -33,7 +33,7 @@ function Win() {
     X_TC = randint(0, 7)
     Y_TC = randint(0, 7)
     display.clear()
-    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+    // display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
     display.show()
     Rand_top += 1
