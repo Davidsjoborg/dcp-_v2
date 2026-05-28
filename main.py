@@ -26,6 +26,7 @@ def Win():
     Y_TC = randint(0, 7)
 
     display.clear()
+    # PRinting new posistion for player ( green)
     #display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
     display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
     display.show()
@@ -303,7 +304,7 @@ if X_C == X_TC and Y_C == Y_TC:
 #display.clear()
 #display.set_brightness(10)
 
-display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+#display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
 display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
 
 #display.show()
