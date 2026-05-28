@@ -27,7 +27,7 @@ def Win():
 
     display.clear()
     # PRinting new posistion for player ( green)
-    #display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+    display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
     display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
     display.show()
     
@@ -80,22 +80,22 @@ def UpButtonClick():
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()
+        else:
+            basic.pause(150)
 
-        basic.pause(150)
-
-        Y_C -= 1
-        if Y_C < 0:
-            Y_C = 7
-        
-        display.clear()
-        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
-        display.show()
+            Y_C -= 1
+            if Y_C < 0:
+                Y_C = 7
+            
+            display.clear()
+            display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+            display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+            display.show()
 
 
-        #IF target over laps with player
-        if X_C == X_TC and Y_C == Y_TC:
-            Win()
+            #IF target over laps with player
+            if X_C == X_TC and Y_C == Y_TC:
+                Win()
 
 def DownButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
@@ -135,21 +135,21 @@ def DownButtonClick():
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()
+        else:
+            basic.pause(150)
 
-        basic.pause(150)
+            Y_C += 1
+            if Y_C > 7:
+                Y_C = 0
+            
+            display.clear()
+            display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+            display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+            display.show()
 
-        Y_C += 1
-        if Y_C > 7:
-            Y_C = 0
-        
-        display.clear()
-        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
-        display.show()
-
-        #IF target over laps with player
-        if X_C == X_TC and Y_C == Y_TC:
-            Win()
+            #IF target over laps with player
+            if X_C == X_TC and Y_C == Y_TC:
+                Win()
 
 def LeftButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
@@ -189,22 +189,22 @@ def LeftButtonClick():
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()
+        else:
+            basic.pause(150)
 
-        basic.pause(150)
+            X_C -= 1
+            if X_C < 0:
+                X_C = 7
+            
+            display.clear()
+            display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+            display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+            display.show()
 
-        X_C -= 1
-        if X_C < 0:
-            X_C = 7
-        
-        display.clear()
-        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
-        display.show()
-
-        #led.plot(X_TC, Y_TC)
-        #IF target over laps with player
-        if X_C == X_TC and Y_C == Y_TC:
-            Win()
+            #led.plot(X_TC, Y_TC)
+            #IF target over laps with player
+            if X_C == X_TC and Y_C == Y_TC:
+                Win()
 
 def RightButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
@@ -245,21 +245,21 @@ def RightButtonClick():
         #IF target over laps with player
         if X_C == X_TC and Y_C == Y_TC:
             Win()
+        else:
+            basic.pause(150)
 
-        basic.pause(150)
+            X_C += 1
+            if X_C > 7:
+                X_C = 0
+            
+            display.clear()
+            display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
+            display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+            display.show()
 
-        X_C += 1
-        if X_C > 7:
-            X_C = 0
-        
-        display.clear()
-        display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
-        display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
-        display.show()
-
-        #IF target over laps with player
-        if X_C == X_TC and Y_C == Y_TC:
-            Win()
+            #IF target over laps with player
+            if X_C == X_TC and Y_C == Y_TC:
+                Win()
 
 GAME_ZIP64.on_button_press(GAME_ZIP64.ZIP64ButtonPins.UP,
     GAME_ZIP64.ZIP64ButtonEvents.CLICK,
@@ -304,7 +304,7 @@ if X_C == X_TC and Y_C == Y_TC:
 #display.clear()
 #display.set_brightness(10)
 
-#display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
 display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
 
 #display.show()

@@ -34,7 +34,7 @@ function Win() {
     Y_TC = randint(0, 7)
     display.clear()
     //  PRinting new posistion for player ( green)
-    // display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
     display.show()
     Rand_top += 1
@@ -81,21 +81,22 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        }
-        
-        basic.pause(150)
-        Y_C -= 1
-        if (Y_C < 0) {
-            Y_C = 7
-        }
-        
-        display.clear()
-        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-        display.show()
-        // IF target over laps with player
-        if (X_C == X_TC && Y_C == Y_TC) {
-            Win()
+        } else {
+            basic.pause(150)
+            Y_C -= 1
+            if (Y_C < 0) {
+                Y_C = 7
+            }
+            
+            display.clear()
+            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+            display.show()
+            // IF target over laps with player
+            if (X_C == X_TC && Y_C == Y_TC) {
+                Win()
+            }
+            
         }
         
     }
@@ -134,21 +135,22 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        }
-        
-        basic.pause(150)
-        Y_C += 1
-        if (Y_C > 7) {
-            Y_C = 0
-        }
-        
-        display.clear()
-        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-        display.show()
-        // IF target over laps with player
-        if (X_C == X_TC && Y_C == Y_TC) {
-            Win()
+        } else {
+            basic.pause(150)
+            Y_C += 1
+            if (Y_C > 7) {
+                Y_C = 0
+            }
+            
+            display.clear()
+            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+            display.show()
+            // IF target over laps with player
+            if (X_C == X_TC && Y_C == Y_TC) {
+                Win()
+            }
+            
         }
         
     }
@@ -187,22 +189,23 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        }
-        
-        basic.pause(150)
-        X_C -= 1
-        if (X_C < 0) {
-            X_C = 7
-        }
-        
-        display.clear()
-        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-        display.show()
-        // led.plot(X_TC, Y_TC)
-        // IF target over laps with player
-        if (X_C == X_TC && Y_C == Y_TC) {
-            Win()
+        } else {
+            basic.pause(150)
+            X_C -= 1
+            if (X_C < 0) {
+                X_C = 7
+            }
+            
+            display.clear()
+            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+            display.show()
+            // led.plot(X_TC, Y_TC)
+            // IF target over laps with player
+            if (X_C == X_TC && Y_C == Y_TC) {
+                Win()
+            }
+            
         }
         
     }
@@ -241,21 +244,22 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        }
-        
-        basic.pause(150)
-        X_C += 1
-        if (X_C > 7) {
-            X_C = 0
-        }
-        
-        display.clear()
-        display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-        display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-        display.show()
-        // IF target over laps with player
-        if (X_C == X_TC && Y_C == Y_TC) {
-            Win()
+        } else {
+            basic.pause(150)
+            X_C += 1
+            if (X_C > 7) {
+                X_C = 0
+            }
+            
+            display.clear()
+            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+            display.show()
+            // IF target over laps with player
+            if (X_C == X_TC && Y_C == Y_TC) {
+                Win()
+            }
+            
         }
         
     }
@@ -287,7 +291,7 @@ if (X_C == X_TC && Y_C == Y_TC) {
 // display = GAME_ZIP64.create_zip64_display()
 // display.clear()
 // display.set_brightness(10)
-// display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
+display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
 display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
 // display.show()
 // display.show_color(GAME_ZIP64.colors(ZipLedColors.RED))
