@@ -86,7 +86,7 @@ def UpButtonClick():
         Y_TC = Y_TC + RandInt_Y
 
         #Changes cordinates if there the same
-        if X_C == X_TC and Y_C == Y_TC:
+        if X_C == X_TC and Y_C -1 == Y_TC:
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
            
@@ -155,7 +155,7 @@ def DownButtonClick():
         Y_TC = Y_TC + RandInt_Y
         
         #Changes cordinates if there the same
-        if X_C == X_TC and Y_C == Y_TC:
+        if X_C == X_TC and Y_C + 1 == Y_TC:
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
             
@@ -221,7 +221,7 @@ def LeftButtonClick():
         Y_TC = Y_TC + RandInt_Y
         
         #Changes cordinates if there the same
-        if X_C == X_TC and Y_C == Y_TC:
+        if X_C - 1 == X_TC and Y_C == Y_TC:
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
             
@@ -289,7 +289,7 @@ def RightButtonClick():
         Y_TC = Y_TC + RandInt_Y
         
         #Changes cordinates if there the same
-        if X_C == X_TC and Y_C == Y_TC:
+        if X_C + 1 == X_TC and Y_C == Y_TC:
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
             
