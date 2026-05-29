@@ -84,6 +84,20 @@ def UpButtonClick():
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
+
+        #Changes cordinates if there the same
+        if X_C == X_TC and Y_C == Y_TC:
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+           
+           
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+                
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+
+
         
         targetStopp_v2()
 
@@ -140,6 +154,18 @@ def DownButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
+        #Changes cordinates if there the same
+        if X_C == X_TC and Y_C == Y_TC:
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            
+            
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+                
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+
         targetStopp_v2()
 
         display.clear()
@@ -194,6 +220,18 @@ def LeftButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
+        #Changes cordinates if there the same
+        if X_C == X_TC and Y_C == Y_TC:
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            
+            
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+                
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+
         targetStopp_v2()
 
         display.clear()
@@ -250,6 +288,18 @@ def RightButtonClick():
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
         
+        #Changes cordinates if there the same
+        if X_C == X_TC and Y_C == Y_TC:
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            
+            
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+                
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+
         targetStopp_v2()
 
         display.clear()

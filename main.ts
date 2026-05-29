@@ -98,6 +98,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
+        // Changes cordinates if there the same
+        if (X_C == X_TC && Y_C == Y_TC) {
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+        }
+        
         targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
@@ -152,6 +162,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
+        // Changes cordinates if there the same
+        if (X_C == X_TC && Y_C == Y_TC) {
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+        }
+        
         targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
@@ -206,6 +226,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
+        // Changes cordinates if there the same
+        if (X_C == X_TC && Y_C == Y_TC) {
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+        }
+        
         targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
@@ -261,6 +291,16 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         
         X_TC = X_TC + RandInt_X
         Y_TC = Y_TC + RandInt_Y
+        // Changes cordinates if there the same
+        if (X_C == X_TC && Y_C == Y_TC) {
+            X_TC = X_TC - RandInt_X
+            Y_TC = Y_TC - RandInt_Y
+            RandInt_X = randint(Rand_bottom, Rand_top)
+            RandInt_Y = randint(Rand_bottom, Rand_top)
+            X_TC = X_TC + RandInt_X
+            Y_TC = Y_TC + RandInt_Y
+        }
+        
         targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
