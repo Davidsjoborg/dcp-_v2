@@ -91,11 +91,11 @@ def UpButtonClick():
             Y_TC = Y_TC - RandInt_Y
            
            
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+            #RandInt_X = randint(Rand_bottom, Rand_top)
+            #RandInt_Y = randint(Rand_bottom, Rand_top)
                 
-            X_TC = X_TC + RandInt_X
-            Y_TC = Y_TC + RandInt_Y
+            #X_TC = X_TC + RandInt_X
+            #Y_TC = Y_TC + RandInt_Y
 
 
         
@@ -160,11 +160,11 @@ def DownButtonClick():
             Y_TC = Y_TC - RandInt_Y
             
             
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+            #RandInt_X = randint(Rand_bottom, Rand_top)
+            #RandInt_Y = randint(Rand_bottom, Rand_top)
                 
-            X_TC = X_TC + RandInt_X
-            Y_TC = Y_TC + RandInt_Y
+            #X_TC = X_TC + RandInt_X
+            #Y_TC = Y_TC + RandInt_Y
 
         targetStopp_v2()
 
@@ -226,11 +226,11 @@ def LeftButtonClick():
             Y_TC = Y_TC - RandInt_Y
             
             
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+            #RandInt_X = randint(Rand_bottom, Rand_top)
+            #RandInt_Y = randint(Rand_bottom, Rand_top)
                 
-            X_TC = X_TC + RandInt_X
-            Y_TC = Y_TC + RandInt_Y
+            #X_TC = X_TC + RandInt_X
+            #Y_TC = Y_TC + RandInt_Y
 
         targetStopp_v2()
 
@@ -294,11 +294,11 @@ def RightButtonClick():
             Y_TC = Y_TC - RandInt_Y
             
             
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+            #RandInt_X = randint(Rand_bottom, Rand_top)
+            #RandInt_Y = randint(Rand_bottom, Rand_top)
                 
-            X_TC = X_TC + RandInt_X
-            Y_TC = Y_TC + RandInt_Y
+            #X_TC = X_TC + RandInt_X
+            #Y_TC = Y_TC + RandInt_Y
 
         targetStopp_v2()
 
