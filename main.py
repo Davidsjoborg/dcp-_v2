@@ -1,4 +1,4 @@
-#Version 4 OK
+#Version 5 OK
 def targetStopp_v2():
     global X_C,Y_C, StepCount,X_TC,Y_TC,Level
     if Level > 2:
@@ -12,7 +12,6 @@ def targetStopp_v2():
             Y_TC = 7
     else:
         targetStopp()
-
 
 def targetStopp():
     global X_C,Y_C, StepCount,X_TC,Y_TC
@@ -31,7 +30,6 @@ def Win():
     display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.YELLOW))
     display.show()
     basic.show_number(StepCount)
-    #basic.show_string("W")
     basic.pause(2000)
 
 
@@ -50,30 +48,21 @@ def Win():
     Rand_bottom -= 1
 
     Level += 1
-    #basic.pause(1500)
     basic.show_number(Level)
 
     if Rand_top > 2:
         Rand_top = 2
         Rand_bottom = -2
 
-
 def UpButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    #basic.show_string("U")
-    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
-    #Y_C -= 1
     StepCount += 1
 
     #IF target over laps with player
     if X_C == X_TC and Y_C == Y_TC:
         Win()
     else:
-        #Makes you go to the other side
-        #if Y_C < 0:
-        #    Y_C = 7
-
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
 
@@ -85,25 +74,6 @@ def UpButtonClick():
         if X_C != X_TC or Y_C -1 != Y_TC:
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
-        
-
-
-        #X_TC = X_TC + RandInt_X
-        #Y_TC = Y_TC + RandInt_Y
-
-        #Changes cordinates if there the same
-        #if X_C == X_TC and Y_C -1 == Y_TC:
-            #X_TC = X_TC - RandInt_X
-            #Y_TC = Y_TC - RandInt_Y
-           
-           
-            #RandInt_X = randint(Rand_bottom, Rand_top)
-            #RandInt_Y = randint(Rand_bottom, Rand_top)
-                
-            #X_TC = X_TC + RandInt_X
-            #Y_TC = Y_TC + RandInt_Y
-
-
         
         targetStopp_v2()
 
@@ -127,27 +97,19 @@ def UpButtonClick():
             display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
             display.show()
 
-
             #IF target over laps with player
             if X_C == X_TC and Y_C == Y_TC:
                 Win()
 
 def DownButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    #basic.show_string("D")
-    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
-    #led.unplot(X_C, Y_C)
-    #Y_C += 1
     StepCount += 1
 
     #IF target over laps with player
     if X_C == X_TC and Y_C == Y_TC:
         Win()
     else:
-        #Makes you go to the other side
-        #if Y_C > 7:
-        #    Y_C = 0
         
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
@@ -161,21 +123,6 @@ def DownButtonClick():
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
         
-        #X_TC = X_TC + RandInt_X
-        #Y_TC = Y_TC + RandInt_Y
-        
-        #Changes cordinates if there the same
-        #if X_C == X_TC and Y_C + 1 == Y_TC:
-            #X_TC = X_TC - RandInt_X
-            #Y_TC = Y_TC - RandInt_Y
-            
-            
-            #RandInt_X = randint(Rand_bottom, Rand_top)
-            #RandInt_Y = randint(Rand_bottom, Rand_top)
-                
-            #X_TC = X_TC + RandInt_X
-            #Y_TC = Y_TC + RandInt_Y
-
         targetStopp_v2()
 
         display.clear()
@@ -204,21 +151,14 @@ def DownButtonClick():
 
 def LeftButtonClick():
     global X_C, Y_C, X_TC, Y_TC , StepCount,RandInt_X,RandInt_Y,Rand_top,Rand_bottom
-    #basic.show_string("L")
-    #basic.pause(2000)
     GAME_ZIP64.run_motor(50)
-    #led.unplot(X_C, Y_C)
-    #X_C -= 1
     StepCount += 1
 
     #IF target over laps with player
     if X_C == X_TC and Y_C == Y_TC:
         Win()
     else:
-        #Makes you go to the other side
-        #if X_C < 0:
-        #    X_C = 7
-        
+
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
 
@@ -231,21 +171,6 @@ def LeftButtonClick():
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
         
-        #X_TC = X_TC + RandInt_X
-        #Y_TC = Y_TC + RandInt_Y
-        
-        #Changes cordinates if there the same
-        #if X_C - 1 == X_TC and Y_C == Y_TC:
-            #X_TC = X_TC - RandInt_X
-            #Y_TC = Y_TC - RandInt_Y
-            
-            
-            #RandInt_X = randint(Rand_bottom, Rand_top)
-            #RandInt_Y = randint(Rand_bottom, Rand_top)
-                
-            #X_TC = X_TC + RandInt_X
-            #Y_TC = Y_TC + RandInt_Y
-
         targetStopp_v2()
 
         display.clear()
@@ -268,7 +193,6 @@ def LeftButtonClick():
             display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
             display.show()
 
-            #led.plot(X_TC, Y_TC)
             #IF target over laps with player
             if X_C == X_TC and Y_C == Y_TC:
                 Win()
@@ -286,11 +210,7 @@ def RightButtonClick():
     if X_C == X_TC and Y_C == Y_TC:
         Win()
     else:
-        #Makes you go to the other side
-        #if X_C > 7:
-        #    X_C = 0
-        
-        
+
         RandInt_X = randint(Rand_bottom, Rand_top)
         RandInt_Y = randint(Rand_bottom, Rand_top)
 
@@ -302,21 +222,6 @@ def RightButtonClick():
         if X_C +1 != X_TC or Y_C != Y_TC:
             X_TC = X_TC - RandInt_X
             Y_TC = Y_TC - RandInt_Y
-
-        #X_TC = X_TC + RandInt_X
-        #Y_TC = Y_TC + RandInt_Y
-        
-        #Changes cordinates if there the same
-        #if X_C + 1 == X_TC and Y_C == Y_TC:
-            #X_TC = X_TC - RandInt_X
-            #Y_TC = Y_TC - RandInt_Y
-            
-            
-            #RandInt_X = randint(Rand_bottom, Rand_top)
-            #RandInt_Y = randint(Rand_bottom, Rand_top)
-                
-            #X_TC = X_TC + RandInt_X
-            #Y_TC = Y_TC + RandInt_Y
 
         targetStopp_v2()
 
@@ -382,19 +287,9 @@ if X_C == X_TC and Y_C == Y_TC:
     Y_TC = randint(0, 7)
     X_TC = randint(0, 7)
 
-#display: GAME_ZIP64.ZIP64Display = None
-#display = GAME_ZIP64.create_zip64_display()
-#display.clear()
-#display.set_brightness(10)
-
 display.set_matrix_color(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.GREEN))
 display.set_matrix_color(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.RED))
 
-#display.show()
-
-#display.show_color(GAME_ZIP64.colors(ZipLedColors.RED))
-#display.set_pixel_color_at(0, GAME_ZIP64.colors(ZipLedColors.BLUE))
-#display.set_matrix_color(2, 2, GAME_ZIP64.colors(ZipLedColors.GREEN))
 display.show()
 #GAME_ZIP64.run_motor(100)
 
