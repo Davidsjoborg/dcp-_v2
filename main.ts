@@ -57,14 +57,13 @@ function Win() {
     X_TC = randint(0, 7)
     Y_TC = randint(0, 7)
     display.clear()
-    //  PRinting new posistion for player ( green)
     display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
     display.show()
-    Rand_top += 1
-    Rand_bottom -= 1
     Level += 1
     basic.showNumber(Level)
+    Rand_top += 1
+    Rand_bottom -= 1
     if (Rand_top > 2) {
         Rand_top = 2
         Rand_bottom = -2
@@ -77,23 +76,39 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
     GAME_ZIP64.runMotor(50)
     StepCount += 1
     // IF target over laps with player
+    // if X_C == X_TC and Y_C == Y_TC:
+    // Win()
+    // else:
+    RandInt_X = randint(Rand_bottom, Rand_top)
+    RandInt_Y = randint(Rand_bottom, Rand_top)
+    // Makes movement number randome again
+    if (RandInt_X == 0 && RandInt_Y == 0) {
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+    }
+    
+    X_TC = X_TC + RandInt_X
+    Y_TC = Y_TC + RandInt_Y
+    if (X_C != X_TC || Y_C - 1 != Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
+    targetStopp_v2()
+    display.clear()
+    display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+    display.show()
+    // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
-        RandInt_X = randint(Rand_bottom, Rand_top)
-        RandInt_Y = randint(Rand_bottom, Rand_top)
-        // Makes movement number randome again
-        if (RandInt_X == 0 && RandInt_Y == 0) {
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+        basic.pause(150)
+        Y_C -= 1
+        if (Y_C < 0) {
+            Y_C = 7
         }
         
-        if (X_C != X_TC || Y_C - 1 != Y_TC) {
-            X_TC = X_TC - RandInt_X
-            Y_TC = Y_TC - RandInt_Y
-        }
-        
-        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -101,22 +116,6 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        } else {
-            basic.pause(150)
-            Y_C -= 1
-            if (Y_C < 0) {
-                Y_C = 7
-            }
-            
-            display.clear()
-            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-            display.show()
-            // IF target over laps with player
-            if (X_C == X_TC && Y_C == Y_TC) {
-                Win()
-            }
-            
         }
         
     }
@@ -127,23 +126,39 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
     GAME_ZIP64.runMotor(50)
     StepCount += 1
     // IF target over laps with player
+    // if X_C == X_TC and Y_C == Y_TC:
+    // Win()
+    // else:
+    RandInt_X = randint(Rand_bottom, Rand_top)
+    RandInt_Y = randint(Rand_bottom, Rand_top)
+    // Makes movement number randome again
+    if (RandInt_X == 0 && RandInt_Y == 0) {
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+    }
+    
+    X_TC = X_TC + RandInt_X
+    Y_TC = Y_TC + RandInt_Y
+    if (X_C != X_TC || Y_C + 1 != Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
+    targetStopp_v2()
+    display.clear()
+    display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+    display.show()
+    // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
-        RandInt_X = randint(Rand_bottom, Rand_top)
-        RandInt_Y = randint(Rand_bottom, Rand_top)
-        // Makes movement number randome again
-        if (RandInt_X == 0 && RandInt_Y == 0) {
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+        basic.pause(150)
+        Y_C += 1
+        if (Y_C > 7) {
+            Y_C = 0
         }
         
-        if (X_C != X_TC || Y_C + 1 != Y_TC) {
-            X_TC = X_TC - RandInt_X
-            Y_TC = Y_TC - RandInt_Y
-        }
-        
-        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -151,22 +166,6 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        } else {
-            basic.pause(150)
-            Y_C += 1
-            if (Y_C > 7) {
-                Y_C = 0
-            }
-            
-            display.clear()
-            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-            display.show()
-            // IF target over laps with player
-            if (X_C == X_TC && Y_C == Y_TC) {
-                Win()
-            }
-            
         }
         
     }
@@ -177,23 +176,39 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
     GAME_ZIP64.runMotor(50)
     StepCount += 1
     // IF target over laps with player
+    // if X_C == X_TC and Y_C == Y_TC:
+    // Win()
+    // else:
+    RandInt_X = randint(Rand_bottom, Rand_top)
+    RandInt_Y = randint(Rand_bottom, Rand_top)
+    // Makes movement number randome again
+    if (RandInt_X == 0 && RandInt_Y == 0) {
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+    }
+    
+    X_TC = X_TC + RandInt_X
+    Y_TC = Y_TC + RandInt_Y
+    if (X_C - 1 != X_TC || Y_C != Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
+    targetStopp_v2()
+    display.clear()
+    display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+    display.show()
+    // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
-        RandInt_X = randint(Rand_bottom, Rand_top)
-        RandInt_Y = randint(Rand_bottom, Rand_top)
-        // Makes movement number randome again
-        if (RandInt_X == 0 && RandInt_Y == 0) {
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+        basic.pause(150)
+        X_C -= 1
+        if (X_C < 0) {
+            X_C = 7
         }
         
-        if (X_C - 1 != X_TC || Y_C != Y_TC) {
-            X_TC = X_TC - RandInt_X
-            Y_TC = Y_TC - RandInt_Y
-        }
-        
-        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -201,22 +216,6 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        } else {
-            basic.pause(150)
-            X_C -= 1
-            if (X_C < 0) {
-                X_C = 7
-            }
-            
-            display.clear()
-            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-            display.show()
-            // IF target over laps with player
-            if (X_C == X_TC && Y_C == Y_TC) {
-                Win()
-            }
-            
         }
         
     }
@@ -231,23 +230,39 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
     // X_C += 1
     StepCount += 1
     // IF target over laps with player
+    // if X_C == X_TC and Y_C == Y_TC:
+    // Win()
+    // else:
+    RandInt_X = randint(Rand_bottom, Rand_top)
+    RandInt_Y = randint(Rand_bottom, Rand_top)
+    // Makes movement number randome again
+    if (RandInt_X == 0 && RandInt_Y == 0) {
+        RandInt_X = randint(Rand_bottom, Rand_top)
+        RandInt_Y = randint(Rand_bottom, Rand_top)
+    }
+    
+    X_TC = X_TC + RandInt_X
+    Y_TC = Y_TC + RandInt_Y
+    if (X_C + 1 != X_TC || Y_C != Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
+    targetStopp_v2()
+    display.clear()
+    display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
+    display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
+    display.show()
+    // IF target over laps with player
     if (X_C == X_TC && Y_C == Y_TC) {
         Win()
     } else {
-        RandInt_X = randint(Rand_bottom, Rand_top)
-        RandInt_Y = randint(Rand_bottom, Rand_top)
-        // Makes movement number randome again
-        if (RandInt_X == 0 && RandInt_Y == 0) {
-            RandInt_X = randint(Rand_bottom, Rand_top)
-            RandInt_Y = randint(Rand_bottom, Rand_top)
+        basic.pause(150)
+        X_C += 1
+        if (X_C > 7) {
+            X_C = 0
         }
         
-        if (X_C + 1 != X_TC || Y_C != Y_TC) {
-            X_TC = X_TC - RandInt_X
-            Y_TC = Y_TC - RandInt_Y
-        }
-        
-        targetStopp_v2()
         display.clear()
         display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
         display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
@@ -255,22 +270,6 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
         // IF target over laps with player
         if (X_C == X_TC && Y_C == Y_TC) {
             Win()
-        } else {
-            basic.pause(150)
-            X_C += 1
-            if (X_C > 7) {
-                X_C = 0
-            }
-            
-            display.clear()
-            display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
-            display.setMatrixColor(X_C, Y_C, GAME_ZIP64.colors(ZipLedColors.Green))
-            display.show()
-            // IF target over laps with player
-            if (X_C == X_TC && Y_C == Y_TC) {
-                Win()
-            }
-            
         }
         
     }
