@@ -284,7 +284,7 @@ let RandInt_X = 0
 let RandInt_Y = 0
 let Rand_top = 1
 let Rand_bottom = -1
-let Level = 0
+let Level = 1
 // Changes cordinates if there the same on start
 if (X_C == X_TC && Y_C == Y_TC) {
     Y_C = randint(0, 7)
