@@ -74,9 +74,9 @@ def UpButtonClick():
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
 
-    if X_C != X_TC or Y_C -1 != Y_TC:
-        X_TC = X_TC - RandInt_X
-        Y_TC = Y_TC - RandInt_Y
+    #if X_C != X_TC or Y_C -1 != Y_TC:
+        #X_TC = X_TC - RandInt_X
+        #Y_TC = Y_TC - RandInt_Y
     
     targetStopp_v2()
 
@@ -125,9 +125,9 @@ def DownButtonClick():
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
 
-    if X_C != X_TC or Y_C +1 != Y_TC:
-        X_TC = X_TC - RandInt_X
-        Y_TC = Y_TC - RandInt_Y
+    #if X_C != X_TC or Y_C +1 != Y_TC:
+        #X_TC = X_TC - RandInt_X
+        #Y_TC = Y_TC - RandInt_Y
     
     targetStopp_v2()
 
@@ -176,9 +176,9 @@ def LeftButtonClick():
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
 
-    if X_C -1 != X_TC or Y_C != Y_TC:
-        X_TC = X_TC - RandInt_X
-        Y_TC = Y_TC - RandInt_Y
+    #if X_C -1 != X_TC or Y_C != Y_TC:
+        #X_TC = X_TC - RandInt_X
+        #Y_TC = Y_TC - RandInt_Y
     
     targetStopp_v2()
 
@@ -231,9 +231,9 @@ def RightButtonClick():
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
 
-    if X_C +1 != X_TC or Y_C != Y_TC:
-        X_TC = X_TC - RandInt_X
-        Y_TC = Y_TC - RandInt_Y
+    #if X_C +1 != X_TC or Y_C != Y_TC:
+        #X_TC = X_TC - RandInt_X
+        #Y_TC = Y_TC - RandInt_Y
 
     targetStopp_v2()
 
