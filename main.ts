@@ -75,10 +75,6 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
     
     GAME_ZIP64.runMotor(50)
     StepCount += 1
-    // IF target over laps with player
-    // if X_C == X_TC and Y_C == Y_TC:
-    // Win()
-    // else:
     RandInt_X = randint(Rand_bottom, Rand_top)
     RandInt_Y = randint(Rand_bottom, Rand_top)
     // Makes movement number randome again
@@ -89,9 +85,11 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Up, GAME_ZIP64.ZIP64ButtonEv
     
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
-    // if X_C != X_TC or Y_C -1 != Y_TC:
-    // X_TC = X_TC - RandInt_X
-    // Y_TC = Y_TC - RandInt_Y
+    if (X_C == X_TC || Y_C - 1 == Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
     targetStopp_v2()
     display.clear()
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
@@ -137,9 +135,11 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Down, GAME_ZIP64.ZIP64Button
     
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
-    // if X_C != X_TC or Y_C +1 != Y_TC:
-    // X_TC = X_TC - RandInt_X
-    // Y_TC = Y_TC - RandInt_Y
+    if (X_C == X_TC || Y_C + 1 == Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
     targetStopp_v2()
     display.clear()
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
@@ -185,9 +185,11 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Left, GAME_ZIP64.ZIP64Button
     
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
-    // if X_C -1 != X_TC or Y_C != Y_TC:
-    // X_TC = X_TC - RandInt_X
-    // Y_TC = Y_TC - RandInt_Y
+    if (X_C - 1 == X_TC || Y_C == Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
     targetStopp_v2()
     display.clear()
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
@@ -237,9 +239,11 @@ GAME_ZIP64.onButtonPress(GAME_ZIP64.ZIP64ButtonPins.Right, GAME_ZIP64.ZIP64Butto
     
     X_TC = X_TC + RandInt_X
     Y_TC = Y_TC + RandInt_Y
-    // if X_C +1 != X_TC or Y_C != Y_TC:
-    // X_TC = X_TC - RandInt_X
-    // Y_TC = Y_TC - RandInt_Y
+    if (X_C + 1 == X_TC || Y_C == Y_TC) {
+        X_TC = X_TC - RandInt_X
+        Y_TC = Y_TC - RandInt_Y
+    }
+    
     targetStopp_v2()
     display.clear()
     display.setMatrixColor(X_TC, Y_TC, GAME_ZIP64.colors(ZipLedColors.Red))
