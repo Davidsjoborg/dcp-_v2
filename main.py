@@ -286,6 +286,7 @@ RandInt_Y = 0
 Rand_top = 1
 Rand_bottom = -1
 Level = 1
+basic.show_number(Level)
 
 #Changes cordinates if there the same on start
 if X_C == X_TC and Y_C == Y_TC:
